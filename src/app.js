@@ -12,7 +12,7 @@ import swaggerUiExpress from 'swagger-ui-express';
 import { specs } from './config/swagger.config.js';
 
 const app = express();
-const PORT = envsConfig.PORT
+const PORT = envsConfig.PORT || 8080
 mongoose.connect(envsConfig.MONGOURL)
 
 app.use(express.json());
