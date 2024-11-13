@@ -1,0 +1,21 @@
+paths:
+  /api/sessions/register:
+    post:
+      summary: Register a new user user
+      description: Register a new user user
+      tags:
+        - Sessions
+      requestBody:
+        required: true
+        description: The user to register
+        content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBody/userBody'
+      responses:
+        201:
+          description: Register a new user user
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'

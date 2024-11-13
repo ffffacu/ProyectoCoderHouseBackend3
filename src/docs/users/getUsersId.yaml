@@ -1,0 +1,21 @@
+paths:
+  /api/users/{uid}:
+    get:
+      tags:
+        - Users
+      summary: Get a user by id
+      parameters:
+        - name: uid
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: User found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+        '404':
+          description: User not found

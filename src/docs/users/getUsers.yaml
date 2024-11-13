@@ -1,0 +1,14 @@
+paths:
+  /api/users:
+    get:
+      sumary: Get all users
+      description: Get all users
+      tags:
+        - Users
+      responses:
+        200:
+          description: Get array of all users
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'

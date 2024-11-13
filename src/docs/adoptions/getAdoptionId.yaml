@@ -1,0 +1,21 @@
+paths:
+  /api/adoptions/{aid}:
+    get:
+      tags:
+        - Adoptions
+      summary: Get an adoption by id
+      parameters:
+        - name: aid
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Adoption found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Adoption'
+        '404':
+          description: Adoption not found

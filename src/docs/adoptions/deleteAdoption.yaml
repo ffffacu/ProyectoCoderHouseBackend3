@@ -1,0 +1,23 @@
+paths:
+  /api/adoptions/{id}:
+    delete:
+      summary: Delete an adoption
+      description: Delete an adoption
+      tags:
+        - Adoptions
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: string
+          required: true
+          description: ID of the adoption
+      responses:
+        200:
+          description: Adoption deleted
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Adoption'
+        404:
+          description: Adoption not found

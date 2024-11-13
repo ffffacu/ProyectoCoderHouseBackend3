@@ -1,0 +1,18 @@
+paths:
+  /api/users/{uid}:
+    delete:
+      summary: Delete a user by id
+      tags:
+        - Users
+      parameters:
+        - name: uid
+          in: path
+          required: true
+          schema:
+            type: string
+          description: The id of the user to delete
+      responses:
+        '200':
+          description: User deleted successfully
+        '404':
+          description: User not found

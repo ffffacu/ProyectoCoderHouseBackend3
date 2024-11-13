@@ -1,0 +1,32 @@
+paths:
+  /api/sessions/unprotectedLogin:
+    post:
+      summary: Unprotected user login
+      description: |
+        This endpoint allows a user to log in by providing their email and password. 
+        If the credentials are valid, a JWT token is generated and stored in an `unprotectedCookie` cookie, 
+        which is sent back to the client. The cookie will last for one hour and is configured with the `httpOnly` 
+        option to prevent unauthorized access from the browser. 
+        If the user does not exist or the password is incorrect, the server will return an appropriate error message. 
+        This functionality is designed for an unprotected authentication flow, meaning it does not require role-based 
+        authorization or access validation.
+
+      tags:
+        - Sessions
+      requestBody:
+        required: true
+        description: The login credentials (email and password).
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/requestBody/sessionBody'
+      responses:
+        200:
+          description: Session successfully created and JWT token provided in cookie
+        400:
+          description: Error due to incomplete data or incorrect password
+        404:
+          description: User not found
+        500:
+          description: Internal server error
+

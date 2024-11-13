@@ -1,0 +1,14 @@
+paths:
+  /api/adoptions:
+    get:
+      summary: Get all adoptions
+      description: Get all adoptions
+      tags:
+        - Adoptions
+      responses:
+        200:
+          description: List of adoptions
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Adoption'

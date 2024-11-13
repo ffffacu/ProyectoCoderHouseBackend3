@@ -22,7 +22,7 @@ export default class Users {
         return userModel.insertMany(docs);
     }
     update = (id,doc) =>{
-        return userModel.findByIdAndUpdate(id,{$set:doc})
+        return userModel.findByIdAndUpdate(id,{$set:doc},{new:true});
     }
 
     delete = (id) =>{

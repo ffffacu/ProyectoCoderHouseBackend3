@@ -1,0 +1,10 @@
+paths:
+  /api/sessions/current:
+    get:
+      summary: Get current session
+      description: Get current session
+      tags:
+        - Sessions
+      responses:
+        200:
+          description: Get current session

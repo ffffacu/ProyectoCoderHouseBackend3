@@ -28,12 +28,22 @@ const createAdoption = async(req,res)=>{
     user.pets.push(pet._id);
     await usersService.update(user._id,{pets:user.pets})
     await petsService.update(pet._id,{adopted:true,owner:user._id})
-    await adoptionsService.create({owner:user._id,pet:pet._id})
-    res.send({status:"success",message:"Pet adopted"})
+    const newAdoption = await adoptionsService.create({owner:user._id,pet:pet._id})
+    res.status(201).send({status:"success",payload:newAdoption,message:"Pet adopted"})
+}
+const deleteAdoption = async(req,res)=>{
+    try {
+        const adoptionId = req.params.aid;
+        await adoptionsService.delete(adoptionId);
+        res.status(200).send({status:"success",message:"Adoption deleted"})
+    } catch (error) {
+        res.status(500).send({status:"error",error:"Internal server error"})
+    }
 }
 
 export default {
     createAdoption,
     getAllAdoptions,
-    getAdoption
+    getAdoption,
+    deleteAdoption
 }

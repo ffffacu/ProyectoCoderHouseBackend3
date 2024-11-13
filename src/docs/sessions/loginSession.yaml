@@ -1,0 +1,17 @@
+paths:
+  /api/sessions/login:
+    post:
+      summary: Login
+      description: Login session
+      tags:
+        - Sessions
+      requestBody:
+        required: true
+        description: The session to be logged in
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/requestBody/sessionBody'
+      responses:
+        200:
+          description: Login session

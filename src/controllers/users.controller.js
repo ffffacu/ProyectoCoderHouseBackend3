@@ -20,12 +20,12 @@ const updateUser =async(req,res)=>{
     const user = await userService.getUserById(userId);
     if(!user) return res.status(404).send({status:"error", error:"User not found"})
     const result = await userService.update(userId,updateBody);
-    res.send({status:"success",message:"User updated"})
+    res.send({status:"success",payload:result,message:"User updated"})
 }
 
 const deleteUser = async(req,res) =>{
     const userId = req.params.uid;
-    const result = await userService.getUserById(userId);
+    await userService.delete(userId);
     res.send({status:"success",message:"User deleted"})
 }
 

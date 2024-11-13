@@ -1,0 +1,10 @@
+paths:
+  /api/sessions/unprotectedCurrent:
+    get:
+      summary: Get current user session
+      description: This endpoint retrieves the current session details of the user by verifying the JWT token stored in the client's cookies. If the token is valid, it returns the user information such as email and role. If the token is not present or invalid, an error will be returned.
+      tags:
+        - Sessions
+      responses:
+        200:
+          description: Successfully retrieves the current session of the user with user details in the response.

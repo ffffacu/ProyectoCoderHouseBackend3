@@ -1,0 +1,14 @@
+components:
+  requestBody:
+    sessionBody:
+      type: object
+      properties:
+        email:
+          type: string
+          description: The email of the user
+        password:
+          type: string
+          description: The password of the user
+      example:
+        email: 0qV9B@example.com
+        password: Coder123

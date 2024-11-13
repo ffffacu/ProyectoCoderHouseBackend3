@@ -1,0 +1,64 @@
+components:
+  schemas:
+    Pet:
+      type: array
+      items:
+        properties:
+          _id:
+            type: ObjectId
+            description: The id of the pet
+          name:
+            type: string
+            description: The name of the pet
+          specie:
+            type: string
+            description: The specie of the pet
+          owner:
+            type: ObjectId
+            description: The id of the owner
+          birthDate:
+            type: string
+            description: The birth date of the pet
+          image:
+            type: string
+            description: The image of the pet
+          adopted:
+            type: boolean
+            description: The adoption status of the pet
+      example:
+          _id: 5f9d9d9d9d9d9d9d9d9d9d9d
+          name: My pet
+          specie: Dog
+          owner: 5f9d9d9d9d9d9d9d9d9d9d9d
+          birthDate: 2020-01-01
+          image: https://example.com/pet.jpg
+          adopted: false
+  requestBody:
+    petBody:
+      type: object
+      properties:
+        name:
+          type: string
+          description: The name of the pet
+        specie:
+          type: string
+          description: The specie of the pet
+        owner:
+          type: ObjectId
+          description: The id of the owner
+        birthDate:
+          type: string
+          description: The birth date of the pet
+        image:
+          type: string
+          description: The image of the pet
+        adopted:
+          type: boolean
+          description: The adoption status of the pet
+      example:
+        name: My pet
+        specie: Dog
+        owner: 5f9d9d9d9d9d9d9d9d9d9d9d
+        birthDate: 2020-01-01
+        image: https://example.com/pet.jpg
+        adopted: false

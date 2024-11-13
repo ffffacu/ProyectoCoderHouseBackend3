@@ -1,0 +1,18 @@
+paths:
+  /api/pets/{id}:
+    delete:
+      summary: Delete a pet by id
+      tags:
+        - Pets
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+          description: The id of the pet to delete
+      responses:
+        '200':
+          description: Pet deleted successfully
+        '404':
+          description: Pet not found

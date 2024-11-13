@@ -1,0 +1,19 @@
+components:
+  schemas:
+    Adoption:
+      type: array
+      item:
+        properties:
+          _id:
+            type: ObjectId
+            description: The id of the adoption
+          owner:
+            type: ObjectId
+            description: The id of the owner
+          pet:
+            type: ObjectId
+            description: The id of the pet
+      example:
+          _id: 5f9d9d9d9d9d9d9d9d9d9d9d
+          owner: 5f9d9d9d9d9d9d9d9d9d9d9d
+          pet: 5f9d9d9d9d9d9d9d9d9d9d9d

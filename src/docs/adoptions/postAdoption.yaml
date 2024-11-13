@@ -1,0 +1,20 @@
+paths:
+  /api/adoptions/{uid}/{pid}:
+    post:
+      summary: Adopt a pet
+      tags:
+        - Adoptions
+      parameters:
+        - name: uid
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: pid
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Pet adopted successfully
